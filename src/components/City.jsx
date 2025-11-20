@@ -11,6 +11,7 @@ const formatDate = (date) =>
 
 function City() {
   const id = useParams();
+  //const [searchParams, setSearchParams] = useSearchParams();
   // TEMP DATA
   const currentCity = {
     cityName: "Lisbon",

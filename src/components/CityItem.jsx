@@ -14,7 +14,10 @@ function CityItem({ city }) {
   const { cityName, country, emoji, date, notes, position, id } = city;
   return (
     <li>
-      <Link to={`${id}`} className={styles.cityItem}>
+      <Link
+        to={`${id}?lat=${position.lat}&lng=${position.lng}`}
+        className={styles.cityItem}
+      >
         <span className={styles.emoji}>{emoji}</span>
         <h3 className={styles.cityName}>
           {cityName}, {country}
