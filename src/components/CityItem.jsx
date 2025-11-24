@@ -11,7 +11,7 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { cityName, country, emoji, date, notes, position, id } = city;
+  const { cityName, country, emoji, date, position, id } = city;
   return (
     <li>
       <Link
@@ -39,7 +39,7 @@ CityItem.propTypes = {
       lat: PropTypes.number,
       lng: PropTypes.number,
     }),
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
 };
 export default CityItem;

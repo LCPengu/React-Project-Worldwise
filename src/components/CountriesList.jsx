@@ -3,8 +3,10 @@ import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import Message from "./Message";
 import CountryItem from "./CountryItem";
+import { useCities } from "../context/CitiesContext.jsx";
 
-function CountriesList({ cities, isLoading }) {
+function CountriesList() {
+  const { cities, isLoading } = useCities();
   const countries = cities.reduce((acc, city) => {
     if (!acc.map((c) => c.country).includes(city.country)) {
       return [...acc, { country: city.country, emoji: city.emoji }];
