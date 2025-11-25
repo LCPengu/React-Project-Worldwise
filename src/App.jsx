@@ -17,24 +17,24 @@ function App() {
     <div>
       {/* Can be sued to apply effects across all webpages which are linked below to it
       <h1>hello router!</h1> */}
-      <CitiesProvider>
-        <BrowserRouter>
+
+      <BrowserRouter>
+        <CitiesProvider>
           <Routes>
             <Route index element={<Homepage />} />
             <Route path="/product" element={<Product />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/login" element={<Login />} />
             <Route path="App" element={<AppLayout />}>
-              <Route index element={<CityList />} />
-              <Route path="cities" element={<CityList />} />
+              <Route index path="cities" element={<CityList />} />
               <Route path="cities/:id" element={<City />} />
               <Route path="countries" element={<CountriesList />} />
               <Route path="form" element={<Form />} />
             </Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
-        </BrowserRouter>
-      </CitiesProvider>
+        </CitiesProvider>
+      </BrowserRouter>
     </div>
   );
 }
