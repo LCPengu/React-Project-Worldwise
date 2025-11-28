@@ -11,7 +11,7 @@ import CountriesList from "./components/CountriesList";
 import City from "./components/City";
 import Form from "./components/Form";
 import { CitiesProvider } from "./context/CitiesContext.jsx";
-import { AuthProvider } from "./context/FakeAuthConext.jsx";
+import { AuthProvider } from "./context/FakeAuthContext.jsx";
 
 function App() {
   return (

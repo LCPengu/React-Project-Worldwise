@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import PageNav from "../components/PageNav";
-import { useAuth } from "../context/FakeAuthConext";
+import { useAuth } from "../context/FakeAuthContext";
 import styles from "./Login.module.css";
 
 export default function Login() {
@@ -10,7 +10,7 @@ export default function Login() {
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
 
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAuthenicated } = useAuth();
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -21,9 +21,9 @@ export default function Login() {
 
   useEffect(
     function () {
-      if (isAuthenticated) navigate("/app", { replace: true });
+      if (isAuthenicated) navigate("/app", { replace: true });
     },
-    [isAuthenticated, navigate]
+    [isAuthenicated, navigate]
   );
 
   return (
